@@ -67,10 +67,11 @@ if [ -f "com.google.android.youtube.apk" ]
 then
     echo "Building Root APK"
     java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar --mount \
-                               -e microg-support \
+                               -e microg-support  \
                                -a com.google.android.youtube.apk -o build/revanced-root.apk
     echo "Building Non-root APK"
     java -jar revanced-cli.jar -m revanced-integrations.apk -b revanced-patches.jar  \
+                               -e seekbar-tapping -e custom-branding -e premium-heading -e disable-fullscreen-panels -e old-quality-layout -e disable-create-button -e amoled -e disable-shorts-button -e hide-cast-button -e background-play -e exclusive-audio-playback -e codecs-unlock -e upgrade-button-remover / 
                                -a com.google.android.youtube.apk -o build/revanced-nonroot.apk
 else
     echo "Cannot find YouTube APK, skipping build"
@@ -86,7 +87,8 @@ then
                                -e microg-support \
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-root.apk
     echo "Building Non-root APK"
-    java -jar revanced-cli.jar -b revanced-patches.jar \
+    java -jar revanced-cli.jar -b revanced-patches.jar \ 
+                               -e seekbar-tapping -e custom-branding -e premium-heading -e disable-fullscreen-panels -e old-quality-layout -e disable-create-button -e amoled -e disable-shorts-button -e hide-cast-button -e background-play -e exclusive-audio-playback -e codecs-unlock -e upgrade-button-remover / 
                                -a com.google.android.apps.youtube.music.apk -o build/revanced-music-nonroot.apk
 else
     echo "Cannot find YouTube Music APK, skipping build"
